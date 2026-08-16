@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Finova</title>
+    <style>
+      #app-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        background: #f7fbfa;
+      }
+
+      .loader-bar {
+        width: 100%;
+        height: 3px;
+        overflow: hidden;
+        background: rgba(0, 137, 123, 0.08);
+      }
+
+      .loader-progress {
+        width: 35%;
+        height: 100%;
+        background: #00897b;
+        animation: app-loading 1.1s ease-in-out infinite;
+      }
+
+      @keyframes app-loading {
+        0% {
+          transform: translateX(-100%);
+        }
+
+        50% {
+          transform: translateX(180%);
+        }
+
+        100% {
+          transform: translateX(300%);
+        }
+      }
+    </style>
+  <script defer src="./bundle.js"></script></head>
+
+  <body>
+    <div id="app-loader">
+      <div class="loader-bar">
+        <div class="loader-progress"></div>
+      </div>
+    </div>
+    <div id="root"></div>
+  </body>
+</html>
